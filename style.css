@@ -40,6 +40,12 @@ span {
     align-items: center;
 }
 
+.timer-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .timer button {
     background: none;
     border: none;
@@ -57,6 +63,10 @@ span {
 
 .timer button + button {
     margin-left: 4rem;
+}
+
+#number {
+    display: flex;
 }
 
 #sound-controls {
