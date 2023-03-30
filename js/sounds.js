@@ -3,13 +3,13 @@ export default function () {
         'https://github.com/adriancampana1/focus-timer-2/blob/main/assets/Floresta.wav?raw=true'
     );
     const soundRain = new Audio(
-        'https://drive.google.com/file/d/1Ip8xBqAUJ-bty51Wz8JBtX_bWXCgA0P2/view'
+        'https://github.com/adriancampana1/focus-timer-2/blob/main/assets/Chuva.wav?raw=true'
     );
     const soundCoffe = new Audio(
-        'https://drive.google.com/file/d/1OxLKpCwg2wrxXFNUHgZxJ51QEt0ac5RA/view'
+        'https://github.com/adriancampana1/focus-timer-2/blob/main/assets/Cafeteria.wav?raw=true'
     );
     const soundFire = new Audio(
-        'https://drive.google.com/file/d/1MakaBPxJvTa_whaSM3kEbRcxiVd1GRCB/view'
+        'https://github.com/adriancampana1/focus-timer-2/blob/main/assets/Lareira.wav?raw=true'
     );
 
     soundFlorest.loop = true;
@@ -19,6 +19,9 @@ export default function () {
 
     function somDeFloresta() {
         soundFlorest.play();
+        soundRain.pause();
+        soundCoffe.pause();
+        soundFire.pause();
     }
 
     function somDeChuva() {
@@ -27,10 +30,16 @@ export default function () {
 
     function somDeCafeteria() {
         soundCoffe.play();
+        soundFlorest.pause();
+        soundRain.pause();
+        soundFire.pause();
     }
 
     function somDeFogo() {
         soundFire.play();
+        soundFlorest.pause();
+        soundRain.pause();
+        soundCoffe.pause();
     }
 
     return {

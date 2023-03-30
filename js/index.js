@@ -26,7 +26,7 @@ const btnRemoveMinutos = document.querySelector('#remove');
 const btnSomDeFloresta = document.querySelector('#florest');
 const btnSomDeChuva = document.querySelector('#rain');
 const btnSomDeCafeteira = document.querySelector('#coffe');
-const btnSomDeFogo = document.querySelector('#fire');
+const btnSomDeFogo = document.querySelector('.fire');
 
 export {
     btnPlay,

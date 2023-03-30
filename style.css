@@ -88,11 +88,11 @@ span {
     transition: 0.3s;
 }
 
-#sound-controls button:hover {
+#sound-controls button:focus {
     background: #02799d;
     transform: scale(1.1);
 }
 
-#sound-controls svg:hover path {
+#sound-controls svg:focus path {
     fill: white;
 }
