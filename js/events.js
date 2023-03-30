@@ -8,7 +8,11 @@ import {
     btnSomDeFogo,
     btnAddMinutos,
     btnRemoveMinutos,
+    minutesDisplay,
+    secondsDisplay,
 } from './index.js';
+
+import Timer from './timer.js';
 
 // eventos
 
@@ -37,7 +41,14 @@ export default function ({ controls, timer, sound }) {
     });
 
     btnRemoveMinutos.addEventListener('click', (e) => {
-        minutosAtualizado -= 5;
+        let minutes = Number(minutesDisplay.textContent);
+        let seconds = Number(secondsDisplay.textContent);
+        let limite = minutes <= 0 && seconds <= 0;
+        if (limite) {
+            return;
+        } else {
+            minutosAtualizado -= 5;
+        }
         timer.updateDisplay(minutosAtualizado, 0);
         timer.updateMinutes(minutosAtualizado);
     });

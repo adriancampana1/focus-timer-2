@@ -1,4 +1,11 @@
-export default function Timer({ minutesDisplay, secondsDisplay }) {
+import Sounds from './sounds.js';
+
+export default function Timer({
+    minutesDisplay,
+    secondsDisplay,
+    resetControls,
+    sound,
+}) {
     let timerTimeOut;
     let minutes = Number(minutesDisplay.textContent);
 
@@ -25,6 +32,7 @@ export default function Timer({ minutesDisplay, secondsDisplay }) {
             if (isFinished) {
                 resetControls();
                 updateDisplay();
+                Sounds().despertadorAutomatico();
                 return;
             }
 

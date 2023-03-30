@@ -8,10 +8,6 @@ const minutesDisplay = document.querySelector('#number .minutes span');
 const secondsDisplay = document.querySelector('#number .seconds span');
 
 // chama funções modularizadas
-const timer = Timer({
-    minutesDisplay,
-    secondsDisplay,
-});
 
 const sound = Sound();
 
@@ -38,12 +34,20 @@ export {
     btnSomDeChuva,
     btnSomDeCafeteira,
     btnSomDeFogo,
+    minutesDisplay,
+    secondsDisplay,
 };
 
 const controls = Controls({
     btnPause,
     btnPlay,
     btnStop,
+});
+
+const timer = Timer({
+    minutesDisplay,
+    secondsDisplay,
+    resetControls: controls.reset,
 });
 
 Events({ controls, timer, sound });
