@@ -1,5 +1,7 @@
 export default function () {
-    const soundFlorest = new Audio();
+    const soundFlorest = new Audio(
+        'https://github.com/adriancampana1/focus-timer-2/blob/main/assets/Floresta.wav?raw=true'
+    );
     const soundRain = new Audio(
         'https://drive.google.com/file/d/1Ip8xBqAUJ-bty51Wz8JBtX_bWXCgA0P2/view'
     );
@@ -23,10 +25,18 @@ export default function () {
         soundRain.play();
     }
 
+    function somDeCafeteria() {
+        soundCoffe.play();
+    }
+
+    function somDeFogo() {
+        soundFire.play();
+    }
+
     return {
-        soundFlorest,
-        soundRain,
-        soundCoffe,
-        soundFire,
+        somDeFloresta,
+        somDeChuva,
+        somDeCafeteria,
+        somDeFogo,
     };
 }

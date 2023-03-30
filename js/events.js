@@ -6,26 +6,27 @@ import {
     btnSomDeChuva,
     btnSomDeCafeteira,
     btnSomDeFogo,
+    btnAddMinutos,
+    btnRemoveMinutos,
 } from './index.js';
 
 // eventos
 
-export default function ({ timer, sound }) {
+export default function ({ controls, timer, sound }) {
+    let minutosAtualizado = 0;
+
     btnPlay.addEventListener('click', (e) => {
-        btnPlay.classList.add('hide');
-        btnPause.classList.remove('hide');
+        controls.play();
         timer.countdown();
     });
 
     btnPause.addEventListener('click', (e) => {
-        btnPause.classList.add('hide');
-        btnPlay.classList.remove('hide');
+        controls.pause();
         timer.hold();
     });
 
     btnStop.addEventListener('click', (e) => {
-        btnPlay.classList.remove('hide');
-        btnPause.classList.add('hide');
+        controls.reset();
         timer.reset();
     });
 
@@ -41,7 +42,7 @@ export default function ({ timer, sound }) {
         timer.updateMinutes(minutosAtualizado);
     });
 
-    btnSomDeChuva.addEventListener('click', (e) => {
-        sound.soundFlorest.play();
+    btnSomDeFloresta.addEventListener('click', (e) => {
+        sound.somDeFloresta();
     });
 }
