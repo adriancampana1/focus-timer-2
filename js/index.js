@@ -9,8 +9,6 @@ const secondsDisplay = document.querySelector('#number .seconds span');
 
 // chama funções modularizadas
 
-const sound = Sound();
-
 // botões de controle
 const btnPlay = document.querySelector('#play');
 const btnPause = document.querySelector('.pause');
@@ -19,10 +17,15 @@ const btnAddMinutos = document.querySelector('#add');
 const btnRemoveMinutos = document.querySelector('#remove');
 
 // botões de som
+
 const btnSomDeFloresta = document.querySelector('#florest');
 const btnSomDeChuva = document.querySelector('#rain');
 const btnSomDeCafeteira = document.querySelector('#coffe');
 const btnSomDeFogo = document.querySelector('.fire');
+const controlVolumeFlorest = document.querySelector('#volForest');
+const controlVolumeRain = document.querySelector('#volRain');
+const controlVolumeCoffe = document.querySelector('#volCoffe');
+const controlVolumeFire = document.querySelector('#volFire');
 
 export {
     btnPlay,
@@ -36,7 +39,12 @@ export {
     btnSomDeFogo,
     minutesDisplay,
     secondsDisplay,
+    controlVolumeFlorest,
+    controlVolumeRain,
+    controlVolumeCoffe,
+    controlVolumeFire,
 };
+const sound = Sound();
 
 const controls = Controls({
     btnPause,

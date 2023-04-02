@@ -8,6 +8,10 @@ import {
     btnSomDeFogo,
     btnAddMinutos,
     btnRemoveMinutos,
+    controlVolumeFlorest,
+    controlVolumeRain,
+    controlVolumeCoffe,
+    controlVolumeFire,
     minutesDisplay,
     secondsDisplay,
 } from './index.js';

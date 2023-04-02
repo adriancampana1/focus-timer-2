@@ -1,3 +1,10 @@
+import {
+    controlVolumeCoffe,
+    controlVolumeFire,
+    controlVolumeFlorest,
+    controlVolumeRain,
+} from './index.js';
+
 export default function () {
     const soundFlorest = new Audio(
         'https://github.com/adriancampana1/focus-timer-2/blob/main/assets/Floresta.wav?raw=true'
@@ -30,6 +37,9 @@ export default function () {
 
     function somDeChuva() {
         soundRain.play();
+        soundFlorest.pause();
+        soundCoffe.pause();
+        soundFire.pause();
     }
 
     function somDeCafeteria() {
@@ -46,15 +56,26 @@ export default function () {
         soundCoffe.pause();
     }
 
-    function despertadorAutomatico() {
-        despertador.play();
-    }
+    controlVolumeFlorest.addEventListener('input', (e) => {
+        soundFlorest.volume = controlVolumeFlorest.value;
+    });
+
+    controlVolumeRain.addEventListener('input', (e) => {
+        soundRain.volume = controlVolumeRain.value;
+    });
+
+    controlVolumeCoffe.addEventListener('input', (e) => {
+        soundCoffe.volume = controlVolumeCoffe.value;
+    });
+
+    controlVolumeFire.addEventListener('input', (e) => {
+        soundFire.volume = controlVolumeFire.value;
+    });
 
     return {
         somDeFloresta,
         somDeChuva,
         somDeCafeteria,
         somDeFogo,
-        despertadorAutomatico,
     };
 }
