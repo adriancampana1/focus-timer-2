@@ -56,20 +56,4 @@ export default function ({ controls, timer, sound }) {
         timer.updateDisplay(minutosAtualizado, 0);
         timer.updateMinutes(minutosAtualizado);
     });
-
-    btnSomDeFloresta.addEventListener('click', (e) => {
-        sound.somDeFloresta();
-    });
-
-    btnSomDeChuva.addEventListener('click', (e) => {
-        sound.somDeChuva();
-    });
-
-    btnSomDeCafeteira.addEventListener('click', (e) => {
-        sound.somDeCafeteria();
-    });
-
-    btnSomDeFogo.addEventListener('click', (e) => {
-        sound.somDeFogo();
-    });
 }

@@ -74,7 +74,7 @@ span {
     grid-template-columns: 1fr 1fr;
 }
 
-#sound-controls button {
+#sound-controls .light {
     margin: 3.2rem;
     padding: 3.5rem;
 
@@ -94,13 +94,85 @@ span {
     gap: 2rem;
 }
 
-#sound-controls button:focus {
+.blue {
+    margin: 3.2rem;
+    padding: 3.5rem;
+
+    border-radius: 24px;
+    border: none;
+
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+
     background: #02799d;
     transform: scale(1.1);
+    transition: 0.3s;
 }
 
-#sound-controls svg:focus path {
+.color1 svg path:first-child {
+    fill: #ffffff;
+}
+
+#sound-controls svg:focus-visible path {
     fill: white;
+}
+
+/* CSS DO INPUT RANGE (CONTROLE DE SOM) */
+
+input[type='range'] {
+    -webkit-appearance: none;
+    appearance: none;
+    display: inline-block;
+    width: 100%;
+    height: 0.5rem;
+    position: relative;
+    border-radius: 5px;
+    background-color: hsla(240, 6%, 21%, 1);
+    outline: none;
+    cursor: pointer;
+}
+
+/* para o Fire Fox */
+.range::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: hsla(240, 6%, 21%, 1);
+    border: none;
+}
+
+/* para browsers da MS */
+.range::-ms-range-thumb {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: hsla(240, 6%, 21%, 1);
+    border: none;
+}
+
+.range::-webkit-slider-thumb {
+    -webkit-appearance: none; /* remove a aparencia padão */
+    border: none;
+
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: hsla(240, 6%, 21%, 1);
+}
+
+/* ESTILIZAÇÃO DO DARK-MODE */
+
+.dark-mode-btn,
+.light-mode-btn {
+    position: absolute;
+
+    top: 10rem;
+    right: 10rem;
 }
 
 /* responsividade */
@@ -120,8 +192,20 @@ span {
         margin: auto;
     }
 
-    #sound-controls button {
+    #sound-controls .light,
+    .blue {
         margin: 2rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .dark-mode-btn,
+    .light-mode-btn {
+        position: absolute;
+
+        top: 1.5rem;
+        right: 50%;
+        left: 47%;
     }
 }
 
@@ -139,12 +223,23 @@ span {
         flex-direction: column;
     }
 
-    #sound-controls button {
-        margin: 1rem;
-        padding: 1.5rem;
+    #sound-controls .light,
+    .blue {
+        margin: 0.8rem;
+        padding: 2.5rem;
     }
 
     #container {
         margin-bottom: 1rem;
+        margin-top: 6rem;
+    }
+
+    .dark-mode-btn,
+    .light-mode-btn {
+        position: absolute;
+
+        top: 1.5rem;
+        right: 50%;
+        left: 45%;
     }
 }
