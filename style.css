@@ -217,19 +217,27 @@ body.dark {
 }
 
 @media (max-width: 700px) {
-    .dark-mode-btn,
-    .light-mode-btn {
+    #dark-mode-btn,
+    #light-mode-btn {
         position: absolute;
 
         top: 1.5rem;
         right: 50%;
         left: 47%;
     }
+
+    #container {
+        margin-top: 4rem;
+    }
 }
 
 @media (max-width: 450px) {
     span {
         font-size: 9rem;
+    }
+
+    body {
+        margin-top: 10rem;
     }
 
     .timer button + button {
@@ -239,6 +247,8 @@ body.dark {
     #sound-controls {
         display: flex;
         flex-direction: column;
+
+        margin-top: 1rem;
     }
 
     #sound-controls .light,
@@ -249,15 +259,15 @@ body.dark {
 
     #container {
         margin-bottom: 1rem;
-        margin-top: 6rem;
+        margin-top: 3rem;
     }
 
-    .dark-mode-btn,
-    .light-mode-btn {
+    #dark-mode-btn,
+    #light-mode-btn {
         position: absolute;
 
         top: 1.5rem;
         right: 50%;
-        left: 45%;
+        left: 42%;
     }
 }
