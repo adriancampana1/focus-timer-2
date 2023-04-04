@@ -7,8 +7,6 @@ import Controls from './controls.js';
 const minutesDisplay = document.querySelector('#number .minutes span');
 const secondsDisplay = document.querySelector('#number .seconds span');
 
-// chama funções modularizadas
-
 // botões de controle
 const btnPlay = document.querySelector('#play');
 const btnPause = document.querySelector('.pause');
@@ -27,6 +25,25 @@ const controlVolumeRain = document.querySelector('#volRain');
 const controlVolumeCoffe = document.querySelector('#volCoffe');
 const controlVolumeFire = document.querySelector('#volFire');
 
+// botões do dark-mode
+
+const body = document.querySelector('body');
+
+const sliderVolForest = document.getElementById('volForest');
+const sliderVolRain = document.getElementById('volRain');
+const sliderVolCoffe = document.getElementById('volCoffe');
+const sliderVolFire = document.getElementById('volFire');
+
+const controleVolForest = sliderVolForest.querySelector(
+    '::-webkit-slider-thumb'
+);
+const controleVolRain = sliderVolRain.querySelector('::-webkit-slider-thumb');
+const controleVolCoffe = sliderVolCoffe.querySelector('::-webkit-slider-thumb');
+const controleVolFire = sliderVolFire.querySelector('::-webkit-slider-thumb');
+
+const darkModeBtn = document.getElementById('light-mode-btn');
+const lightModeBtn = document.getElementById('dark-mode-btn');
+
 export {
     btnPlay,
     btnPause,
@@ -43,6 +60,17 @@ export {
     controlVolumeRain,
     controlVolumeCoffe,
     controlVolumeFire,
+    sliderVolForest,
+    sliderVolRain,
+    sliderVolCoffe,
+    sliderVolFire,
+    darkModeBtn,
+    lightModeBtn,
+    controleVolCoffe,
+    controleVolFire,
+    controleVolRain,
+    controleVolForest,
+    body,
 };
 const sound = Sound();
 

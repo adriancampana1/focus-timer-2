@@ -132,7 +132,7 @@ input[type='range'] {
     height: 0.5rem;
     position: relative;
     border-radius: 5px;
-    background-color: hsla(240, 6%, 21%, 1);
+    background-color: rgb(50, 50, 57);
     outline: none;
     cursor: pointer;
 }
@@ -165,14 +165,32 @@ input[type='range'] {
     background: hsla(240, 6%, 21%, 1);
 }
 
+#volForest.dark-mode-slider::-webkit-slider-thumb,
+#volRain.dark-mode-slider::-webkit-slider-thumb,
+#volFire.dark-mode-slider::-webkit-slider-thumb,
+#volCoffe.dark-mode-slider::-webkit-slider-thumb {
+    background: white;
+}
+
 /* ESTILIZAÇÃO DO DARK-MODE */
 
-.dark-mode-btn,
-.light-mode-btn {
+#dark-mode-btn,
+#light-mode-btn {
     position: absolute;
 
     top: 10rem;
     right: 10rem;
+
+    cursor: pointer;
+
+    background: none;
+    border: none;
+
+    transition: 0.3s;
+}
+
+body.dark {
+    background: #121214;
 }
 
 /* responsividade */

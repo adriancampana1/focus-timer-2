@@ -3,13 +3,14 @@ import {
     controlVolumeFire,
     controlVolumeFlorest,
     controlVolumeRain,
-} from './index.js';
-
-import {
     btnSomDeFloresta,
     btnSomDeFogo,
     btnSomDeCafeteira,
     btnSomDeChuva,
+    sliderVolForest,
+    sliderVolCoffe,
+    sliderVolRain,
+    sliderVolFire,
 } from './index.js';
 
 export default function () {
@@ -45,6 +46,14 @@ export default function () {
         }
     }
 
+    function toggleDarkMode(slider, thumb) {
+        if (slider.classList.contains('dark-mode-slider')) {
+            slider.style.backgroundColor = '#fff';
+        } else {
+            slider.style.backgroundColor = '#323239';
+        }
+    }
+
     controlVolumeFlorest.addEventListener('input', (e) => {
         soundFlorest.volume = controlVolumeFlorest.value;
     });
@@ -66,27 +75,42 @@ export default function () {
         btnSomDeFloresta.classList.toggle('blue');
         btnSomDeFloresta.classList.toggle('light');
 
+        sliderVolForest.classList.toggle('dark-mode-slider');
+
         changeColor(soundFlorest, btnSomDeFloresta);
+        toggleDarkMode(sliderVolForest);
     });
 
     btnSomDeChuva.addEventListener('click', (e) => {
         btnSomDeChuva.classList.toggle('color1');
         btnSomDeChuva.classList.toggle('blue');
         btnSomDeChuva.classList.toggle('light');
+
+        sliderVolRain.classList.toggle('dark-mode-slider');
+
         changeColor(soundRain, btnSomDeChuva);
+        toggleDarkMode(sliderVolRain);
     });
 
     btnSomDeCafeteira.addEventListener('click', (e) => {
         btnSomDeCafeteira.classList.toggle('color1');
         btnSomDeCafeteira.classList.toggle('blue');
         btnSomDeCafeteira.classList.toggle('light');
+
+        sliderVolCoffe.classList.toggle('dark-mode-slider');
+
         changeColor(soundCoffe, btnSomDeCafeteira);
+        toggleDarkMode(sliderVolCoffe);
     });
 
     btnSomDeFogo.addEventListener('click', (e) => {
         btnSomDeFogo.classList.toggle('color1');
         btnSomDeFogo.classList.toggle('blue');
         btnSomDeFogo.classList.toggle('light');
+
+        sliderVolFire.classList.toggle('dark-mode-slider');
+
         changeColor(soundFire, btnSomDeFogo);
+        toggleDarkMode(sliderVolFire);
     });
 }

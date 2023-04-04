@@ -14,6 +14,9 @@ import {
     controlVolumeFire,
     minutesDisplay,
     secondsDisplay,
+    darkModeBtn,
+    lightModeBtn,
+    body,
 } from './index.js';
 
 import Timer from './timer.js';
@@ -55,5 +58,19 @@ export default function ({ controls, timer, sound }) {
         }
         timer.updateDisplay(minutosAtualizado, 0);
         timer.updateMinutes(minutosAtualizado);
+    });
+
+    darkModeBtn.addEventListener('click', (e) => {
+        body.classList.toggle('dark');
+
+        darkModeBtn.classList.add('hide');
+        lightModeBtn.classList.remove('hide');
+    });
+
+    lightModeBtn.addEventListener('click', (e) => {
+        body.classList.remove('dark');
+
+        lightModeBtn.classList.add('hide');
+        darkModeBtn.classList.remove('hide');
     });
 }
