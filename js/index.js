@@ -4,6 +4,7 @@ import Events from './events.js';
 import Controls from './controls.js';
 
 // temporizador
+const separatorDisplay = document.querySelector('#number .separator span');
 const minutesDisplay = document.querySelector('#number .minutes span');
 const secondsDisplay = document.querySelector('#number .seconds span');
 
@@ -56,6 +57,7 @@ export {
     btnSomDeFogo,
     minutesDisplay,
     secondsDisplay,
+    separatorDisplay,
     controlVolumeFlorest,
     controlVolumeRain,
     controlVolumeCoffe,

@@ -46,7 +46,7 @@ export default function () {
         }
     }
 
-    function toggleDarkMode(slider, thumb) {
+    function toggleDarkMode(slider) {
         if (slider.classList.contains('dark-mode-slider')) {
             slider.style.backgroundColor = '#fff';
         } else {
@@ -113,4 +113,9 @@ export default function () {
         changeColor(soundFire, btnSomDeFogo);
         toggleDarkMode(sliderVolFire);
     });
+
+    return {
+        changeColor,
+        toggleDarkMode,
+    };
 }
