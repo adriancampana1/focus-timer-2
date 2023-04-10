@@ -274,8 +274,8 @@ body.dark {
         position: absolute;
 
         top: 1.5rem;
-        right: 50%;
-        left: 47%;
+        right: 45%;
+        left: 45%;
     }
 
     #container {
@@ -289,7 +289,7 @@ body.dark {
     }
 
     body {
-        margin-top: 10rem;
+        margin-top: 5rem;
     }
 
     .timer button + button {
@@ -304,7 +304,9 @@ body.dark {
     }
 
     #sound-controls .light,
-    .blue {
+    .blue,
+    .dark-blue,
+    .dark-gray {
         margin: 0.8rem;
         padding: 2.5rem;
     }
@@ -319,7 +321,7 @@ body.dark {
         position: absolute;
 
         top: 1.5rem;
-        right: 50%;
-        left: 42%;
+        right: 45%;
+        left: 45%;
     }
 }
