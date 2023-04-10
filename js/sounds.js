@@ -36,24 +36,6 @@ export default function () {
     soundCoffe.loop = true;
     soundFire.loop = true;
 
-    function changeColor(audio, button) {
-        const card = button;
-        if (card.classList.contains('color1')) {
-            audio.play();
-        } else {
-            audio.pause();
-            audio = '';
-        }
-    }
-
-    function toggleDarkMode(slider) {
-        if (slider.classList.contains('dark-mode-slider')) {
-            slider.style.backgroundColor = '#fff';
-        } else {
-            slider.style.backgroundColor = '#323239';
-        }
-    }
-
     controlVolumeFlorest.addEventListener('input', (e) => {
         soundFlorest.volume = controlVolumeFlorest.value;
     });
@@ -70,52 +52,121 @@ export default function () {
         soundFire.volume = controlVolumeFire.value;
     });
 
+    function changeColorLightMode(audio, button) {
+        const card = button;
+        if (
+            card.classList.contains('blue') ||
+            card.classList.contains('dark-blue')
+        ) {
+            audio.play();
+        } else {
+            audio.pause();
+            audio = '';
+        }
+    }
+
+    function toggleDarkMode(slider) {
+        if (slider.classList.contains('dark-mode-slider')) {
+            slider.style.backgroundColor = '#fff';
+        } else {
+            slider.style.backgroundColor = '#323239';
+        }
+    }
+
     btnSomDeFloresta.addEventListener('click', (e) => {
         btnSomDeFloresta.classList.toggle('color1');
-        btnSomDeFloresta.classList.toggle('blue');
-        btnSomDeFloresta.classList.toggle('light');
+
+        if (
+            btnSomDeFloresta.classList.contains('dark-gray') ||
+            btnSomDeFloresta.classList.contains('dark-blue')
+        ) {
+            btnSomDeFloresta.classList.toggle('dark-blue');
+            btnSomDeFloresta.classList.toggle('dark-gray');
+            btnSomDeFloresta.classList.toggle('color1');
+            sliderVolForest.classList.toggle('dark-mode-slider');
+            toggleDarkMode(sliderVolForest);
+        } else {
+            btnSomDeFloresta.classList.toggle('blue');
+            btnSomDeFloresta.classList.toggle('light');
+        }
 
         sliderVolForest.classList.toggle('dark-mode-slider');
 
-        changeColor(soundFlorest, btnSomDeFloresta);
+        changeColorLightMode(soundFlorest, btnSomDeFloresta);
         toggleDarkMode(sliderVolForest);
     });
 
     btnSomDeChuva.addEventListener('click', (e) => {
         btnSomDeChuva.classList.toggle('color1');
-        btnSomDeChuva.classList.toggle('blue');
-        btnSomDeChuva.classList.toggle('light');
+
+        if (
+            btnSomDeChuva.classList.contains('dark-gray') ||
+            btnSomDeChuva.classList.contains('dark-blue')
+        ) {
+            btnSomDeChuva.classList.toggle('dark-blue');
+            btnSomDeChuva.classList.toggle('dark-gray');
+            btnSomDeChuva.classList.toggle('color1');
+            sliderVolRain.classList.toggle('dark-mode-slider');
+            toggleDarkMode(sliderVolRain);
+        } else {
+            btnSomDeChuva.classList.toggle('blue');
+            btnSomDeChuva.classList.toggle('light');
+        }
 
         sliderVolRain.classList.toggle('dark-mode-slider');
 
-        changeColor(soundRain, btnSomDeChuva);
+        changeColorLightMode(soundRain, btnSomDeChuva);
         toggleDarkMode(sliderVolRain);
     });
 
     btnSomDeCafeteira.addEventListener('click', (e) => {
         btnSomDeCafeteira.classList.toggle('color1');
-        btnSomDeCafeteira.classList.toggle('blue');
-        btnSomDeCafeteira.classList.toggle('light');
+
+        if (
+            btnSomDeCafeteira.classList.contains('dark-gray') ||
+            btnSomDeCafeteira.classList.contains('dark-blue')
+        ) {
+            btnSomDeCafeteira.classList.toggle('dark-blue');
+            btnSomDeCafeteira.classList.toggle('dark-gray');
+            btnSomDeCafeteira.classList.toggle('color1');
+            sliderVolCoffe.classList.toggle('dark-mode-slider');
+            toggleDarkMode(sliderVolCoffe);
+        } else {
+            btnSomDeCafeteira.classList.toggle('blue');
+            btnSomDeCafeteira.classList.toggle('light');
+        }
 
         sliderVolCoffe.classList.toggle('dark-mode-slider');
 
-        changeColor(soundCoffe, btnSomDeCafeteira);
+        changeColorLightMode(soundCoffe, btnSomDeCafeteira);
         toggleDarkMode(sliderVolCoffe);
     });
 
     btnSomDeFogo.addEventListener('click', (e) => {
         btnSomDeFogo.classList.toggle('color1');
-        btnSomDeFogo.classList.toggle('blue');
-        btnSomDeFogo.classList.toggle('light');
+
+        if (
+            btnSomDeFogo.classList.contains('dark-gray') ||
+            btnSomDeFogo.classList.contains('dark-blue')
+        ) {
+            btnSomDeFogo.classList.toggle('dark-blue');
+            btnSomDeFogo.classList.toggle('dark-gray');
+            btnSomDeFogo.classList.toggle('color1');
+            sliderVolFire.classList.toggle('dark-mode-slider');
+            toggleDarkMode(sliderVolFire);
+        } else {
+            btnSomDeFogo.classList.toggle('blue');
+            btnSomDeFogo.classList.toggle('light');
+        }
 
         sliderVolFire.classList.toggle('dark-mode-slider');
 
-        changeColor(soundFire, btnSomDeFogo);
+        changeColorLightMode(soundFire, btnSomDeFogo);
         toggleDarkMode(sliderVolFire);
     });
 
     return {
-        changeColor,
+        changeColorLightMode,
         toggleDarkMode,
     };
 }

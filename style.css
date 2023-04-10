@@ -110,7 +110,6 @@ span {
     gap: 2rem;
 
     background: #02799d;
-    transform: scale(1.1);
     transition: 0.3s;
 }
 
@@ -130,7 +129,6 @@ span {
     gap: 2rem;
 
     background: #0a3442;
-    transform: scale(1.1);
     transition: 0.3s;
 }
 
@@ -150,7 +148,7 @@ span {
     gap: 2rem;
 
     background: #29292e;
-    transform: scale(1.1);
+
     transition: 0.3s;
 }
 
